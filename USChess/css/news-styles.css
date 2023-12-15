@@ -1,0 +1,72 @@
+@font-face {
+    font-family: 'Intro';
+    src: url("../assets/fonts/Intro.otf") format("opentype");
+}
+
+* {
+    background-color: black;
+    color: white;
+    font-family: 'Intro';
+}
+
+.carousel {
+    margin-bottom: 4rem;
+    background: black;
+    border: solid 2px white;
+    width: 100%;
+}
+
+.carousel-caption {
+    bottom: 3rem;
+    z-index: 10;
+}
+
+.carousel-item {
+    height: 32rem;
+}
+
+.marketing .col-lg-4 {
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.marketing .col-lg-4 p {
+    margin-right: .75rem;
+    margin-left: .75rem;
+}
+
+
+.featurette-divider {
+    margin: 5rem 0; 
+    border: solid 0.5px white;
+    opacity: 100%;
+}
+
+
+.featurette-heading {
+    letter-spacing: -.05rem;
+}
+
+.bd-placeholder-img {
+    border: solid 2px white;
+    margin-bottom: 1em;
+    transition: all 0.3s;
+    filter:grayscale(100%)
+}
+
+.bd-placeholder-img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px white;
+    transition: all 0.3s;
+}
+
+.btn{
+    border: solid 2px white;
+    color: white;
+}
+
+.btn:hover{
+    border: solid 2px white;
+    color: black;
+    background-color: white;
+}

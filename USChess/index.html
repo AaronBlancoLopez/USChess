@@ -1,0 +1,98 @@
+<DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/nav-bar-styles.css">
+        <link rel="stylesheet" href="css/index-styles.css">
+        <title>USChess</title>
+    </head>
+    <body onload="loadTable()">
+        <div id="header" style ="min-height: 105px;"></div>
+
+        <div class="main-container">
+            <div class="side-column">
+                <div class="GOFD-container">
+                    <div class="GOFD-header">
+                        <p>PARTIDA DEL DÍA</p>
+                    </div>
+                    <div class="GOFD-gif">
+                        <img src="../assets/images/board.gif" alt="partida-del-dia">
+                    </div>
+                </div>
+                <div class="ad-container">
+                    <img src="../assets/images/adplaceholder.jpg" alt="partida-del-dia">
+                </div>
+            </div>
+            <div class="main-column">
+                <div class="play-container">
+                    <div class="play-container-header">
+                        <p>JUGAR</p>
+                    </div>
+                    <div class="play-buttons">
+                        <div class="buttons-row">
+                            <button class="time-selector-buttons" onclick="window.location.href='play.html'" data-time="1" data-increment="0"> <img src="assets/images/balita.png" alt="" >1 min</button>
+                            <button class="time-selector-buttons" onclick="window.location.href='play.html'" data-time="1" data-increment="2"> <img src="assets/images/balita.png" alt="">1 | 2</button>
+                            <button class="time-selector-buttons" onclick="window.location.href='play.html'" data-time="3" data-increment="0"> <img src="assets/images/rayito.png" alt="">3 min</button>
+                            <button class="time-selector-buttons" onclick="window.location.href='play.html'" data-time="3" data-increment="2"> <img src="assets/images/rayito.png" alt="">3 | 2</button>
+                        </div>
+                        <div class="buttons-row">
+                            <button class="time-selector-buttons" onclick="window.location.href='play.html'" data-time="10" data-increment="0"> <img src="assets/images/relojito.png" alt="">10 min</button>
+                            <button class="time-selector-buttons" onclick="window.location.href='play.html'" data-time="15" data-increment="10"> <img src="assets/images/relojito.png" alt="">15 | 10</button>
+                            <button class="time-selector-buttons" onclick="window.location.href='play.html'" data-time="1440" data-increment="0"> <img src="assets/images/solito.png" style="height: 54%;" alt="">1 día</button>
+                            <button class="time-selector-buttons" onclick="window.location.href='play.html'" data-time="10080" data-increment="0"> <img src="assets/images/solito.png" style="height: 54%;" alt="">7 días</button>
+                        </div>
+                    </div>
+                    <div class="games-registry-container">
+                        <p class="table-container-header">Registro de partidas</p>
+                        <table class="game-registry-table">
+                            <thead>
+                                <tr class="table-header">
+                                    <th>Tipo</th>
+                                    <th>Jugadores</th>
+                                    <th>Resultado</th>
+                                    <th>Fecha</th>
+                                </tr>
+                            </thead>
+                            <tbody> 
+                            </tbody>
+                        </table>
+                        <img class="registry-gif" src="../assets/images/board.gif" alt="partida-del-dia">
+                        <img class="registry-gif" src="../assets/images/board.gif" alt="partida-del-dia">
+                        <img class="registry-gif" src="../assets/images/board.gif" alt="partida-del-dia">
+                        <img class="registry-gif" src="../assets/images/board.gif" alt="partida-del-dia">
+                        <img class="registry-gif" src="../assets/images/board.gif" alt="partida-del-dia">
+                    </div>
+                </div>
+            </div>
+            <div class="side-column">
+                <div class="GOFD-container">
+                    <div class="GOFD-header">
+                        <p>JUGADOR DEL DÍA</p>
+                    </div>
+                    <div class="POFD-gif">
+                        <img src="../assets/images/pro-players/magnus-carlsen.jpg" alt="partida-del-dia">
+                    </div>
+                </div>
+                <div class="ad-container">
+                    <img src="../assets/images/adplaceholder.jpg" alt="partida-del-dia">
+                </div>
+            </div>
+        </div>
+    </body>
+
+    <script>
+        let buttons = document.querySelectorAll(".time-selector-buttons")
+        buttons.forEach(button => {
+            button.addEventListener("click", function(){
+                localStorage.setItem("time", button.dataset.time)
+                localStorage.setItem("increment", button.dataset.increment)
+            })
+        });
+    </script>
+
+    <script src="js/registry.js"></script>
+    <script src="js/head_loader.js"></script>
+</html>

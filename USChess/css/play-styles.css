@@ -1,0 +1,233 @@
+@font-face {
+    font-family: 'Intro';
+    src: url("../assets/fonts/Intro.otf") format("opentype");
+}
+
+@font-face {
+    font-family: 'digital';
+    src: url("../assets/fonts/digital-7.ttf");
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Intro';
+    background-color: black;
+}
+
+/************************************ MAIN CONTAINER ************************************/
+
+/********* GAME CONTAINER *********/
+
+.container {
+    height: 85%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: 85vh;
+    min-height: 700px;
+    width: 100vw;
+    gap: 8%;
+    padding-left: 20vw;
+    background-color: black;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Game Room Styles */
+
+.board-and-users{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.chess-board{
+    width: 604px;
+    height: 604px;
+    display: grid;
+    grid-template-rows: repeat(8, calc(600px / 8));
+    grid-template-columns: repeat(8, calc(600px / 8));
+    margin: 35px 0;
+    border: 2px double white;
+}
+
+.chess-board .box{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+}
+
+.chess-board .box:nth-child(-2n+8),
+.chess-board .box:nth-child(8) ~ .box:nth-child(-2n+15), 
+.chess-board .box:nth-child(16) ~ .box:nth-child(-2n+24),
+.chess-board .box:nth-child(24) ~ .box:nth-child(-2n+31),
+.chess-board .box:nth-child(32) ~ .box:nth-child(-2n+40),
+.chess-board .box:nth-child(40) ~ .box:nth-child(-2n+47),
+.chess-board .box:nth-child(48) ~ .box:nth-child(-2n+56),
+.chess-board .box:nth-child(56) ~ .box:nth-child(-2n+63){
+    background-color: black;
+}
+
+.box .piece{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box .piece img{
+    width: 80%;
+    height: 80%;
+}
+
+.display-position-left::before{
+    position: absolute;
+    transform: translateX(-60px);
+    color: white;
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+.display-position-left:nth-child(1)::before{
+    content: "8";
+}
+
+.display-position-left:nth-child(9)::before{
+    content: "7";
+}
+
+.display-position-left:nth-child(17)::before{
+    content: "6";
+}
+
+.display-position-left:nth-child(25)::before{
+    content: "5";
+}
+
+.display-position-left:nth-child(33)::before{
+    content: "4";
+}
+
+.display-position-left:nth-child(41)::before{
+    content: "3";
+}
+
+.display-position-left:nth-child(49)::before{
+    content: "2";
+}
+
+.display-position-left:nth-child(57)::before{
+    content: "1";
+}
+
+.display-position-bottom::after{
+    content: 'a';
+    position: absolute;
+    transform: translateY(60px);
+    color: white;
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+.display-position-bottom:nth-child(57)::after{
+    content: "A";
+}
+
+.display-position-bottom:nth-child(58)::after{
+    content: "B";
+}
+
+.display-position-bottom:nth-child(59)::after{
+    content: "C";
+}
+
+.display-position-bottom:nth-child(60)::after{
+    content: "D";
+}
+
+.display-position-bottom:nth-child(61)::after{
+    content: "E";
+}
+
+.display-position-bottom:nth-child(62)::after{
+    content: "F";
+}
+
+.display-position-bottom:nth-child(63)::after{
+    content: "G";
+}
+
+.display-position-bottom:nth-child(64)::after{
+    content: "H";
+}
+
+.white {
+    filter: sepia();
+}
+
+.black {
+    filter: invert(40%) hue-rotate(170deg);
+}
+
+
+/************************************ CLOCK CONTAINER ************************************/
+
+.clock {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+}
+
+.clock-screen {
+    width: 300px;
+    height: 150px;
+    display: flex;
+    background-color: black;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    border: 2px white solid;
+    margin: 50px 0;
+    font-family: 'digital';
+}
+
+.player-2 .prueba {
+    width: 98%;
+    height: 96%;
+    background-color: white;
+    color: black;
+    margin: 0;
+    padding: 25px 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.clock-digits {
+    margin: 0;
+    padding: 1px;
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+body {
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
+}
+
+/************************************ PIECE POINTER ************************************/
+
+.pointer {
+    transform: scale(1.2);
+    transition: transform 0.3s;
+}
